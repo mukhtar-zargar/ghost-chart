@@ -1,0 +1,23 @@
+appName: ghost
+image: mukhtarzargar/ghost
+port: 3000
+imagePullPolicy: Always
+replicas: 1
+
+secrets:
+  DAPR_APP_PORT: ""
+  DB_NAME: ""
+  JWT_SECRET: ""
+  MONGO_CONNECTION_URL: ""
+  PORT: ""
+  POST_COLLECTION: ""
+  USER_COLLECTION: ""
+
+mongodb:
+  enabled: true
+  auth:
+    rootUser: root
+    rootPassword: secretpassword
+  service:
+    ports:
+      mongodb: 27017
